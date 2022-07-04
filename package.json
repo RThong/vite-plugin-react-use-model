@@ -1,0 +1,37 @@
+{
+  "name": "vite-plugin-react-use-model",
+  "version": "0.0.1",
+  "description": "A vite plugin",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "pnpm run build -- --watch --ignore-watch examples",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "example": "cd examples/vite-react && pnpm run build"
+  },
+  "keywords": [
+    "vite",
+    "plugin"
+  ],
+  "author": "Hong",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "bumpp": "^7.1.1",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "tsup": "^6.0.1",
+    "typescript": "^4.7.2",
+    "vite": "^2.9.13"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "directories": {
+    "example": "examples"
+  }
+}
