@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "pnpm run build",
-    "build": "rimraf ./dist && tsc && node ./scripts/copy.js && cd examples/vite-react && pnpm start",
-    "example": "cd examples/vite-react && pnpm run build"
+    "dev": "rimraf ./dist ./examples/vite-react/src/.hong && tsc && node ./scripts/copy.js && pnpm example",
+    "build": "rimraf ./dist && tsc && node ./scripts/copy.js ",
+    "example": "cd examples/vite-react && pnpm start"
   },
   "keywords": [
     "vite",
@@ -22,20 +22,18 @@
     "@types/react": "^18.0.14",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
-    "bumpp": "^7.1.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "fs-extra": "^10.1.0",
     "globby": "^11.0.3",
-    "mkdirp": "^1.0.4",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.7.2",
     "vite": "^2.9.13"
   },
   "dependencies": {
-    "fast-glob": "^3.2.11",
+    "mkdirp": "^1.0.4",
     "mustache": "^4.2.0",
     "react": "^18.2.0"
   },

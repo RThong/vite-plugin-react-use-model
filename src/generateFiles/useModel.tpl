@@ -1,16 +1,10 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 
 import type Dispatcher from './dispatcher';
-import type { models } from './Provider';
-import { Context } from './Provider';
-
-export type ModelNamespace = keyof typeof models;
-
-export type ModelType = typeof models;
+import { Context, ModelNamespace, ModelType } from './Provider';
 
 const useModel = <T extends ModelNamespace>(namespace: T) => {
   const dispatcher = useContext(Context) as Dispatcher<T>;
-  console.log('useModel', namespace, dispatcher);
 
   const [state, setState] = useState(
     () => dispatcher.data[namespace] as ReturnType<ModelType[T]>,
@@ -20,8 +14,6 @@ const useModel = <T extends ModelNamespace>(namespace: T) => {
   stateRef.current = state;
 
   useEffect(() => {
-    console.log('【useModel useLayoutEffect 】');
-
     const render = (value: ReturnType<ModelType[T]>) => {
       const currentState = value;
       const previousState = stateRef.current;

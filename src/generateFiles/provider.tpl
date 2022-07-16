@@ -1,16 +1,23 @@
 import React, { ReactNode } from 'react';
-
-import useA from '../examples/vite-react/src/models/useA';
-import useB from '../examples/vite-react/src/models/useB';
+{{#importModels}}
+{{{.}}}
+{{/importModels}}
 import Dispatcher from './dispatcher';
 import initor from './Initor';
-import type { ModelNamespace, ModelType } from './useModel';
 
 export const Context = React.createContext(
   {},
 ) as unknown as React.Context<Dispatcher>;
 
-export const models = { useA: useA, useB: useB };
+export const models = {
+  {{#models}}
+  {{.}}
+  {{/models}}
+};
+
+export type ModelNamespace = keyof typeof models;
+
+export type ModelType = typeof models;
 
 const Exe = initor;
 const dispatcher = new Dispatcher();

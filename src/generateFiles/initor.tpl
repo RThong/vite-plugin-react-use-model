@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-
-import type { ModelNamespace, ModelType } from './useModel';
+import { ModelNamespace, ModelType } from './Provider';
 
 const Initor = <T extends ModelNamespace>({
   namespace,
@@ -31,8 +30,6 @@ const Initor = <T extends ModelNamespace>({
     if (initialLoad.current) {
       updateRef.current(data as ReturnType<ModelType[T]>);
     } else {
-      console.log('【！！！！】');
-
       initialLoad.current = true;
     }
   });

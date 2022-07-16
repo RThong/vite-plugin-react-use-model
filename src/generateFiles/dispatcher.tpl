@@ -1,4 +1,4 @@
-import type { ModelNamespace, ModelType } from './useModel';
+import type { ModelNamespace, ModelType } from './Provider';
 
 class Dispatcher<T extends ModelNamespace = ModelNamespace> {
   public data: { [key in ModelNamespace]?: ReturnType<ModelType[key]> } = {};
