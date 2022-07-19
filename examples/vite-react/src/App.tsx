@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import useModel from './.hong/useModel';
+import { useModel } from '@vite-plugin-react-use-model';
 
 const Test = () => {
   console.log('@@@@@');

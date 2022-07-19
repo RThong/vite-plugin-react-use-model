@@ -1,10 +1,11 @@
-import type { PluginOption } from 'vite';
+import { PluginOption } from 'vite';
 
 import {
   generateProvider,
   generateDispatcher,
   generateInitor,
   generateUseModel,
+  generateExport,
 } from './generateFiles';
 
 import FileService from './utils/fileService';
@@ -20,10 +21,14 @@ export default function vitePluginTemplate({
     // 插件名称
     name: 'vite-plugin-react-use-model',
 
-    // pre 会较于 post 先执行
-    enforce: 'pre', // post
-
-    configResolved(config) {
+    config: () => ({
+      resolve: {
+        alias: {
+          '@vite-plugin-react-use-model': './.hong',
+        },
+      },
+    }),
+    configResolved() {
       fileService = new FileService({
         cwd: process.cwd(),
         modelDir,
@@ -33,6 +38,7 @@ export default function vitePluginTemplate({
       generateDispatcher(fileService);
       generateInitor(fileService);
       generateUseModel(fileService);
+      generateExport(fileService);
     },
   };
 }
