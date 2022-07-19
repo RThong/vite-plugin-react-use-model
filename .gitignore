@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-**/.hong
+**/.vite-plugin-react-use-model
 
 # Editor directories and files
 .vscode/*

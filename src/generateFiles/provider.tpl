@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 {{#importModels}}
 {{{.}}}
 {{/importModels}}
-import Dispatcher from './dispatcher';
-import initor from './Initor';
+import Dispatcher from './helpers/dispatcher';
+import initor from './helpers/Initor';
 
 export const Context = React.createContext(
   {},

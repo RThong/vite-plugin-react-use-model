@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "rimraf ./dist ./examples/vite-react/src/.hong && tsc && node ./scripts/copy.js && pnpm example",
+    "dev": "rimraf ./dist ./examples/vite-react/src/.vite-plugin-react-use-model && tsc && node ./scripts/copy.js && pnpm example",
     "build": "rimraf ./dist && tsc && node ./scripts/copy.js ",
     "example": "cd examples/vite-react && pnpm start"
   },

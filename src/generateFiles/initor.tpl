@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { ModelNamespace, ModelType } from './Provider';
+import { ModelNamespace, ModelType } from '../Provider';
 
 const Initor = <T extends ModelNamespace>({
   namespace,

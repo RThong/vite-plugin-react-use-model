@@ -8,7 +8,7 @@ const getDispatcherTpl = () =>
 
 export default function generateDispatcher(fileService: FileService) {
   fileService.writeFile({
-    path: 'dispatcher.ts',
+    path: '/helpers/dispatcher.ts',
     content: Mustache.render(getDispatcherTpl(), {}),
   });
 }

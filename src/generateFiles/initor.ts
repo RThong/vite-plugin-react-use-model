@@ -8,7 +8,7 @@ const getInitorTpl = () =>
 
 export default function generateInitor(fileService: FileService) {
   fileService.writeFile({
-    path: 'Initor.tsx',
+    path: '/helpers/Initor.tsx',
     content: Mustache.render(getInitorTpl(), {}),
   });
 }

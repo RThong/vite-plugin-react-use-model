@@ -1,5 +1,14 @@
-export { default as generateProvider } from './provider';
-export { default as generateDispatcher } from './dispatcher';
-export { default as generateInitor } from './initor';
-export { default as generateUseModel } from './useModel';
-export { default as generateExport } from './export';
+import FileService from '../utils/fileService';
+import generateDispatcher from './dispatcher';
+import generateExport from './export';
+import generateInitor from './initor';
+import generateProvider from './provider';
+import generateUseModel from './useModel';
+
+export const generateFiles = (fileService: FileService) => {
+  generateProvider(fileService);
+  generateDispatcher(fileService);
+  generateInitor(fileService);
+  generateUseModel(fileService);
+  generateExport(fileService);
+};

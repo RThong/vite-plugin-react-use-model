@@ -17,7 +17,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@vite-plugin-react-use-model": ["./src/.hong"]
+      "@vite-plugin-react-use-model": ["./src/.vite-plugin-react-use-model"]
     }
   },
   "include": ["src"],

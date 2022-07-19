@@ -1,12 +1,8 @@
+import path from 'path';
 import { PluginOption } from 'vite';
 
-import {
-  generateProvider,
-  generateDispatcher,
-  generateInitor,
-  generateUseModel,
-  generateExport,
-} from './generateFiles';
+import { generateFiles } from './generateFiles';
+import { TEMP_DIR_NAME } from './utils/constants';
 
 import FileService from './utils/fileService';
 
@@ -24,7 +20,10 @@ export default function vitePluginTemplate({
     config: () => ({
       resolve: {
         alias: {
-          '@vite-plugin-react-use-model': './.hong',
+          '@vite-plugin-react-use-model': path.join(
+            process.cwd(),
+            `src/${TEMP_DIR_NAME}`,
+          ),
         },
       },
     }),
@@ -33,12 +32,7 @@ export default function vitePluginTemplate({
         cwd: process.cwd(),
         modelDir,
       });
-
-      generateProvider(fileService);
-      generateDispatcher(fileService);
-      generateInitor(fileService);
-      generateUseModel(fileService);
-      generateExport(fileService);
+      generateFiles(fileService);
     },
   };
 }

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 
-import type Dispatcher from './dispatcher';
+import type Dispatcher from './helpers/dispatcher';
 import { Context, ModelNamespace, ModelType } from './Provider';
 
 const useModel = <T extends ModelNamespace>(namespace: T) => {
