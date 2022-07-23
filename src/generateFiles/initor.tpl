@@ -10,8 +10,6 @@ const Initor = <T extends ModelNamespace>({
   hook: ModelType[T];
   onUpdate: (val: ReturnType<ModelType[T]>) => void;
 }) => {
-  console.log('【Initor】');
-
   const updateRef = useRef(onUpdate);
 
   updateRef.current = onUpdate;
