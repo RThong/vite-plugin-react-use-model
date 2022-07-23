@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import mkdirp from 'mkdirp';
 import { dirname, join, resolve } from 'path';
-import { TEMP_DIR_NAME } from './constants';
+import { DEFAULT_MODEL_DIR, TEMP_DIR_NAME } from './constants';
 
 export interface FileServiceOptions {
   cwd: string;
@@ -27,7 +27,7 @@ class FileService {
     const absTmpPath = resolve(options.cwd, `./src/${TEMP_DIR_NAME}`);
     const modelDirPath = resolve(
       options.cwd,
-      options.modelDir ?? './src/models',
+      options.modelDir ?? DEFAULT_MODEL_DIR,
     );
 
     this.paths.cwd = options.cwd;

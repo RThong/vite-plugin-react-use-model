@@ -6,11 +6,15 @@ import { TEMP_DIR_NAME } from './utils/constants';
 
 import FileService from './utils/fileService';
 
-export default function vitePluginTemplate({
-  modelDir,
-}: {
+export interface Options {
+  /**
+   * default: 'src/models'
+   */
   modelDir?: string;
-}): PluginOption {
+}
+
+export default function viteReactUseModel(options?: Options): PluginOption {
+  const { modelDir } = options ?? {};
   let fileService: FileService;
 
   return {
