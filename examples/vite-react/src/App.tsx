@@ -6,7 +6,7 @@ import { useModel } from '@vite-plugin-react-use-model';
 const Test = () => {
   console.log('@@@@@');
 
-  const { a, setA } = useModel('useA');
+  const [a, setA] = useModel('useA');
 
   console.log('【Test渲染】', a);
 
@@ -21,7 +21,7 @@ const Test = () => {
 };
 
 const ComA = () => {
-  const { a, setA } = useModel('useA');
+  const [a, setA] = useModel('useA');
   console.log('【ComA渲染】', a);
 
   return (
@@ -35,7 +35,7 @@ const ComA = () => {
 };
 
 const ComB = () => {
-  const { b, setB } = useModel('useB');
+  const [b, setB] = useModel('useB');
   console.log('【ComB渲染】', b);
 
   return (
