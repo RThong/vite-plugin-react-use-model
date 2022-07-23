@@ -35,7 +35,7 @@ class Dispatcher<T extends ModelNamespace = ModelNamespace> {
     return () => {
       this.callbackList = {
         ...this.callbackList,
-        [namespace]: temp.filter((cb) => cb !== callback),
+        [namespace]: (this.callbackList[namespace] ?? []).filter((cb) => cb !== callback),
       };
     };
   };
