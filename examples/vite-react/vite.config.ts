@@ -4,10 +4,5 @@ import viteReactModelPlugin from 'vite-plugin-react-use-model';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    viteReactModelPlugin({
-      modelDir: './src/models',
-    }),
-  ],
+  plugins: [react(), viteReactModelPlugin()],
 });

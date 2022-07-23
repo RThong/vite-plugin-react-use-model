@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "rimraf ./dist ./examples/vite-react/src/.vite-plugin-react-use-model && tsc && node ./scripts/copy.js && pnpm example",
+    "dev": "rimraf ./dist ./examples/vite-react/src/.vite-plugin-react-use-model && tsc && node ./scripts/copy.js && cd ./examples/vite-react && pnpm start",
     "build": "rimraf ./dist && tsc && node ./scripts/copy.js "
   },
   "devDependencies": {
